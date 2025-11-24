@@ -1,0 +1,8 @@
+streamlit
+google-generativeai
+gtts
+pydub
+speechrecognition
+pyaudio
+python-dotenv
+simpleaudio
