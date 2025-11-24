@@ -22,8 +22,7 @@ A **STOP button** is also included so users can interrupt speech anytime. 🔊�
 ## **Project Structure**
 
 Below is the complete project file structure in **one place** exactly as you wanted:
-
-
+```text
 voice-bot/
 │── app.py → Main Streamlit application
 │── nlp.py → Handles Gemini model responses
@@ -32,5 +31,5 @@ voice-bot/
 │── requirements.txt → Python dependencies
 │── .gitignore → Prevents sensitive/temporary files from uploading
 │── .env → Your API Key (DO NOT upload to GitHub)
-
+```
 
