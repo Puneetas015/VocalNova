@@ -58,9 +58,54 @@ voice-bot/
 │── nlp.py → Handles Gemini model responses
 │── tts.py → Text-to-speech + STOP functionality
 │── config.py → Loads environment variables
-│── dashboard.py Analytics dashboard developed to track performance metrics.
+│── dashboard.py → Analytics dashboard developed to track performance metrics.
 │── requirements.txt → Python dependencies
 │── .gitignore → Prevents sensitive/temporary files from uploading
 │── .env → Your API Key (DO NOT upload to GitHub)
 ```
+## 🗺️VocalNova Flowchart
 
+```mermaid
+graph TD
+    A[User Speaks Input] --> B(STT: speech_recognition);
+    B --> C{Transcribed Text Available?};
+    C -- No --> A;
+    C -- Yes --> D(NLU/Intent Recognition);
+    D --> E{Query Requires Dynamic Data?};
+    E -- Yes: e.g., Balance, FAQ --> F(Backend/Database Integration);
+    E -- No: e.g., Small Talk --> G(Gemini LLM);
+    F --> G;
+    G --> H(Response Generation: Text);
+    H --> I(TTS: gTTS/pydub);
+    I --> J[Audio Response Output];
+    J --> K{Continue Session?};
+    K -- No --> L[End];
+    K -- Yes --> A;
+```
+***
+### 💡 Future Scope
+
+While the bot currently achieves all objectives of the assignment, there are always avenues for enhancement:
+
+* **Robust Database Integration:** Implement a proper connection to a production-ready database (e.g., PostgreSQL or MongoDB) for real-time customer data handling, fully realizing the integration requirement.
+* **Acoustic Optimization:** Integrate advanced audio processing techniques to improve STT accuracy in noisy environments.
+* **Human Handoff:** Develop a seamless mechanism for transferring the conversation to a human agent when the NLU detects a high-complexity or sensitive query.
+
+### 👏 Contributing
+
+We welcome contributions, bug reports, and feature requests! If you have suggestions or want to improve the codebase:
+
+1.  **Fork** the repository.
+2.  Create a new feature branch (`git checkout -b feature/AmazingFeature`).
+3.  Commit your changes (`git commit -m 'Add some AmazingFeature'`).
+4.  Push to the branch (`git push origin feature/AmazingFeature`).
+5.  Open a **Pull Request**.
+
+
+
+***
+
+**Thank you for checking out the VocalNova project!**
+
+
+    
