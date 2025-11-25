@@ -31,9 +31,22 @@ The bot is built on a modular architecture, ensuring each component is focused a
 
 ### 5. Text-to-Speech Conversion (TTS)
 This is the bot's **voice**, converting its textual reply back into an audio format.
-* [cite_start]**Function:** Converts the generated text response into high-quality speech output for the user. [cite: 19, 20]
-* [cite_start]**Suggested Tools:** *[Mention the tool you actually used, e.g., Google Cloud Text-to-Speech API, Amazon Polly]* [cite: 21]
+*Function:** Converts the generated text response into high-quality speech output for the user. 
 
+### 6. Analytics Dashboard
+To ensure continuous improvement and monitoring, a basic analytics dashboard was developed to track performance metrics.
+
+**Objective:** Track and display key metrics like user queries, response times, and error rates for performance improvement.
+* **Implementation:** Developed using **Streamlit** to provide a live, visual representation of the bot's operational health.
+* **Key Metrics Displayed:**
+    * **Total User Interactions & Query Volume:** What customers are asking for most.
+    * **Average Latency (Response Times):** How quickly the bot provides a response.
+    * **Overall Error Rate:** Percentage of unhandled or misunderstood queries.
+
+To run the dashboard, execute:
+```bash
+streamlit run dashboard.py
+```
 ---
 
 ## **Project Structure**
@@ -45,6 +58,7 @@ voice-bot/
 │── nlp.py → Handles Gemini model responses
 │── tts.py → Text-to-speech + STOP functionality
 │── config.py → Loads environment variables
+│── dashboard.py Analytics dashboard developed to track performance metrics.
 │── requirements.txt → Python dependencies
 │── .gitignore → Prevents sensitive/temporary files from uploading
 │── .env → Your API Key (DO NOT upload to GitHub)
